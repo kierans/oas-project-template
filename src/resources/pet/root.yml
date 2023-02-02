@@ -1,0 +1,58 @@
+put:
+  tags:
+    - pet
+  summary: Update an existing pet
+  description: Update an existing pet by Id
+  operationId: updatePet
+
+  security:
+    - petstore_auth:
+        - write:pets
+        - read:pets
+
+  requestBody:
+    description: Update an existent pet in the store
+    required: true
+    $ref: "../../requests/pet-update.yml"
+
+  responses:
+    "200":
+      description: Successful operation
+      $ref: "../../responses/updated-pet.yml"
+
+    "400":
+      $ref: "../../responses/bad-request.yml"
+
+    "404":
+      $ref: "../../responses/not-found.yml"
+
+    "405":
+      $ref: "../../responses/method-not-allowed.yml"
+
+post:
+  tags:
+    - pet
+  summary: Add a new pet to the store
+  description: Add a new pet to the store
+  operationId: addPet
+
+  requestBody:
+    description: Create a new pet in the store
+    required: true
+    $ref: "../../requests/pet-update.yml"
+
+  responses:
+    "200":
+      description: Successful operation
+      $ref: "../../responses/updated-pet.yml"
+
+    "400":
+      $ref: "../../responses/bad-request.yml"
+
+    "405":
+      $ref: "../../responses/method-not-allowed.yml"
+
+  security:
+    - petstore_auth:
+        - write:pets
+        - read:pets
