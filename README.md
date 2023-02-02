@@ -21,7 +21,7 @@ To view the API spec in its entirety, the YAML must be assembled from the parts.
 To aid in assembling tools such as [swagger-cli][2] can be used. To view the spec in a human
 friendly format, either [swagger-ui][3] or [redocly][4] can transform the spec into HTML.
 
-This project used the [oas-builder][5] image to assist spec writers. A Makefile is also 
+This project uses the [oas-builder][5] image to assist spec writers. A Makefile is also 
 provided for convenience, however the commands are shell commands and can be run without 
 `make` being present.
 
