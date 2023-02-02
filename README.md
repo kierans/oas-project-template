@@ -1,7 +1,7 @@
 # oas-project-template
 Template project for creating module OAS specs
 
-The specification is currently published at https://kierans777.github.io/oas-project-template/api.html
+The specification is currently published at https://kierans.github.io/oas-project-template/api.html
 
 # Structure
 
