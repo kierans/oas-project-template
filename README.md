@@ -21,19 +21,11 @@ To view the API spec in its entirety, the YAML must be assembled from the parts.
 To aid in assembling tools such as [swagger-cli][2] can be used. To view the spec in a human
 friendly format, either [swagger-ui][3] or [redocly][4] can transform the spec into HTML.
 
-A [Dockerfile][5] is provided to build a tools image to assist spec writers. A Makefile is
-also provided for convenience, however the commands are shell commands and can be run without
+This project used the [oas-builder][5] image to assist spec writers. A Makefile is also 
+provided for convenience, however the commands are shell commands and can be run without 
 `make` being present.
 
 The examples use `make`.
-
-## Building the image
-
-To build the Docker image
-
-```shell
-$ make docker
-```
 
 ## Assembling the spec
 
@@ -77,14 +69,13 @@ The tools docker image contains the `hbs` cli tool, and the Makefile orchestrate
 of sections from HBS templates.
 <hr>
 
-1: Credit to [David Garcia][5] for his blog post outlining how to modularise an Open API spec.
+1: Credit to [David Garcia][6] for his blog post outlining how to modularise an Open API spec.
 
 [1]: https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm#sec_5_2_1_1
 [2]: https://apitools.dev/swagger-cli/
 [3]: https://github.com/swagger-api/swagger-ui/
 [4]: https://redocly.com/
-[5]: https://docs.docker.com/engine/reference/builder/
+[5]: https://hub.docker.com/repository/docker/kierans777/oas-builder
 [6]: https://davidgarcia.dev/posts/how-to-split-open-api-spec-into-multiple-files/
-[7]: https://www.addpineapple.com
 [8]: https://swagger.io/docs/specification/using-ref/
 [9]: https://handlebarsjs.com/

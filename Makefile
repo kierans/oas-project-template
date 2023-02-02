@@ -1,6 +1,6 @@
 DOCKER_RUN=docker run --rm
 DOCKER_CLI=$(DOCKER_RUN) $(DOCKER_VOLUMES) $(DOCKER_IMAGE)
-DOCKER_IMAGE=oas-builder
+DOCKER_IMAGE=kierans777/oas-builder:1.0.0
 DOCKER_RENDER_ERROR=$(DOCKER_RENDER_TEMPLATE) $(ERROR_TEMPLATE)
 DOCKER_RENDER_TEMPLATE=$(DOCKER_CLI) /usr/local/bin/render-template.sh
 DOCKER_SERVE=$(DOCKER_RUN) -p 8080:8080 $(DOCKER_VOLUMES) $(DOCKER_IMAGE)
@@ -20,9 +20,6 @@ clean:
 
 dist: assemble
 	@$(DOCKER_CLI) npx redoc-cli build $(DIST_SPEC) --output /oas/dist/doc/index.html
-
-docker:
-	docker build -t $(DOCKER_IMAGE) .
 
 generate: src/responses/bad-request.yml \
           src/responses/not-found.yml \
