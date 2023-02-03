@@ -33,9 +33,6 @@ jobs:
         env:
           SKIP_LOGIN: true
 
-      - name: Make docker image
-        run: make docker
-
       - name: Generate docs
         run: |
           make dist
